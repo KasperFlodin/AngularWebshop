@@ -55,6 +55,29 @@ namespace APIWebshop.Controllers
                 return Problem(ex.Message);
             }
         }
+        
+        [HttpGet]
+        [Route("{productType}")]
+        public async Task<IActionResult> FindProductByTypeAsync([FromRoute] string productType)
+        {
+            try
+            {
+                var productResponse = await _productService.FindProductByTypeAsync(productType);
+
+                if (productResponse == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(productResponse);
+
+            }
+            catch (Exception ex)
+            {
+
+                return Problem(ex.Message);
+            }
+        }
 
         [HttpPost]
         public async Task<IActionResult> CreateProductAsync([FromBody] ProductRequest newProduct)

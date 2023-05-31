@@ -4,6 +4,7 @@
     {
         Task<List<ProductResponse>> GetAllProductsAsync();
         Task<ProductResponse> FindProductByIdAsync(int productId);
+        Task<ProductResponse> FindProductByTypeAsync(string product);
         Task<ProductResponse> CreateProductAsync(ProductRequest newProduct);
         Task<ProductResponse> DeleteProductByIdAsync(int productId);
         Task<ProductResponse> UpdateProductByIdAsync(int productId, ProductRequest updateProduct);
@@ -47,7 +48,7 @@
             {
                 throw new ArgumentNullException();
             }
-            return products.Select(product => MapProductToProductResponse(product)).ToList();
+            return products.Select(MapProductToProductResponse).ToList();
         }
 
         public async Task<ProductResponse> FindProductByIdAsync(int productId)

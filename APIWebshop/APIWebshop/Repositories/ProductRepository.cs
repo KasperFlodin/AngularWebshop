@@ -18,7 +18,7 @@
             _context = context;
         }
 
-        // READ!
+        // Read
         public async Task<List<Product>> GetAllProducts()
         {
             return await _context.Product.ToListAsync(); // use include for foreign key connections here
@@ -29,9 +29,9 @@
             return await _context.Product.FirstOrDefaultAsync(i => i.Id == productId); // use include for foreign key connections here
         }
         
-        public async Task<Product?> FindProductByType(string productType)
+        public async Task<List<Product>> FindProductByType(string productType)
         {
-            return await _context.Product.FirstOrDefaultAsync(t => t.Type == productType); // use include for foreign key connections here
+            return await _context.Product.Where(t => t.Type == productType).ToListAsync(); // use include for foreign key connections here
         }
 
         // Create
