@@ -4,6 +4,7 @@
     {
         Task<List<Product>> GetAllProducts();
         Task<Product?> FindProductById(int productId);
+        Task<Product?> FindProductByType(string productType);
         Task<Product?> CreateProduct(Product product);
         Task<Product?> DeleteProductById(int productId);
         Task<Product?> UpdateProductById(int productId, Product product);
@@ -27,9 +28,14 @@
         {
             return await _context.Product.FirstOrDefaultAsync(i => i.Id == productId); // use include for foreign key connections here
         }
+        
+        public async Task<Product?> FindProductByType(string productType)
+        {
+            return await _context.Product.FirstOrDefaultAsync(t => t.Type == productType); // use include for foreign key connections here
+        }
 
         // Create
-        public async Task<Product> CreateProduct(Product newProduct)
+        public async Task<Product?> CreateProduct(Product newProduct)
         {
             _context.Product.Add(newProduct);
             await _context.SaveChangesAsync();
@@ -65,6 +71,6 @@
             }
             return product;
         }
-        //testing
+        
     }
 }
