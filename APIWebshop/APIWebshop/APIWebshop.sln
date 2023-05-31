@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIWebshop", "APIWebshop.csproj", "{B6A4F1E4-AB8E-4D47-A971-E277847CBA88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebshop", "..\TestWebshop\TestWebshop.csproj", "{103C6B96-D128-4288-BDF3-9BDFCBF4325D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6A4F1E4-AB8E-4D47-A971-E277847CBA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A4F1E4-AB8E-4D47-A971-E277847CBA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A4F1E4-AB8E-4D47-A971-E277847CBA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A4F1E4-AB8E-4D47-A971-E277847CBA88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{103C6B96-D128-4288-BDF3-9BDFCBF4325D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{103C6B96-D128-4288-BDF3-9BDFCBF4325D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{103C6B96-D128-4288-BDF3-9BDFCBF4325D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{103C6B96-D128-4288-BDF3-9BDFCBF4325D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49A0B362-813F-4480-B48D-C3CD752996CB}
+	EndGlobalSection
+EndGlobal
