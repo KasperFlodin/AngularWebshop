@@ -7,7 +7,7 @@ namespace APIWebshop.Database
     {
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
         public DbSet<Product> Product { get; set; }
-        public DbSet<User> User { get; set; }
+        //public DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

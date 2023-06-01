@@ -1,10 +1,12 @@
-﻿namespace APIWebshop.Services
+﻿using APIWebshop.Database.Entities;
+
+namespace APIWebshop.Services
 {
     public interface IProductService
     {
         Task<List<ProductResponse>> GetAllProductsAsync();
         Task<ProductResponse> FindProductByIdAsync(int productId);
-        Task<ProductResponse> FindProductByTypeAsync(string product);
+        Task<List<ProductResponse>> FindProductByTypeAsync(string product);
         Task<ProductResponse> CreateProductAsync(ProductRequest newProduct);
         Task<ProductResponse> DeleteProductByIdAsync(int productId);
         Task<ProductResponse> UpdateProductByIdAsync(int productId, ProductRequest updateProduct);
@@ -63,16 +65,17 @@
             return null;
         }
         
-        public async Task<ProductResponse> FindProductByTypeAsync(string productType)
+        public async Task<List<ProductResponse>> FindProductByTypeAsync(string productType)
         {
-            var product = await _productRepository.FindProductByType(productType);
+            List<Product> product = await _productRepository.FindProductByType(productType);
 
-            if (product != null)
+            if (product == null)
             {
-                return MapProductToProductResponse(product);
+                throw new ArgumentNullException();                
             }
 
-            return null;
+            //return MapProductToProductResponse(product);
+            return product.Select(MapProductToProductResponse).ToList();
         }
 
         public async Task<ProductResponse> CreateProductAsync(ProductRequest newProduct)

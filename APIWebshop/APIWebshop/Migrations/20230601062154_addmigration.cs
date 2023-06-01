@@ -7,7 +7,7 @@
 namespace APIWebshop.Migrations
 {
     /// <inheritdoc />
-    public partial class AddDatabase : Migration
+    public partial class addmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

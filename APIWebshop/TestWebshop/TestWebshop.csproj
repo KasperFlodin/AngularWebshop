@@ -23,9 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ControllerTests\" />
     <Folder Include="ServiceTests\" />
-    <Folder Include="RepositoryTests\" />
   </ItemGroup>
 
 </Project>

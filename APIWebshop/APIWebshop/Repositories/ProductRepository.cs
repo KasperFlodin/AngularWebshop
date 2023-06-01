@@ -4,7 +4,7 @@
     {
         Task<List<Product>> GetAllProducts();
         Task<Product?> FindProductById(int productId);
-        Task<Product?> FindProductByType(string productType);
+        Task<List<Product>> FindProductByType(string productType);
         Task<Product?> CreateProduct(Product product);
         Task<Product?> DeleteProductById(int productId);
         Task<Product?> UpdateProductById(int productId, Product product);

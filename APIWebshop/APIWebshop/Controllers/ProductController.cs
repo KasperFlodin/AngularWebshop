@@ -34,7 +34,7 @@ namespace APIWebshop.Controllers
         }
 
         [HttpGet]
-        [Route("{productId}")]
+        [Route("Product/{productId}")]
         public async Task<IActionResult> FindProductByIdAsync([FromRoute] int productId)
         {
             try
@@ -62,7 +62,7 @@ namespace APIWebshop.Controllers
         {
             try
             {
-                var productResponse = await _productService.FindProductByTypeAsync(productType);
+                List<ProductResponse> productResponse = await _productService.FindProductByTypeAsync(productType);
 
                 if (productResponse == null)
                 {

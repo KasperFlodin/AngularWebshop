@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APIWebshop.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230531120312_AddDatabase")]
-    partial class AddDatabase
+    [Migration("20230601062154_addmigration")]
+    partial class addmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
